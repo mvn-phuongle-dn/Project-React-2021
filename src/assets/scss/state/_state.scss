@@ -1,0 +1,93 @@
+.section-title {
+  color: map-get($map: $color, $key: normal);
+  font-size: 24px;
+  padding-top: 50px;
+}
+
+.section-about-us, .section-account {
+  padding: 50px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.f-bold {
+  font-weight: 700;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.txt-primary {
+  color: map-get($map: $color, $key: primary);
+}
+
+.txt-gray {
+  color: #a8a5a5;
+}
+
+.text-group {
+  padding: 4px 0;
+  .title {
+    display: inline-block;
+    width: 120px;
+  }
+}
+
+.active {
+  color: map-get($map: $color, $key: primary);
+}
+
+.link-style {
+  color: #0f9cef;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+hr {
+  border: 1px solid map-get($map: $color, $key: accent);
+}
+
+.d-flex {
+  @include flex-style(flex, true, true, false);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.span-high-light {
+  color: #0fef2d;
+}
+
+.txt-center {
+  text-align: center;
+}

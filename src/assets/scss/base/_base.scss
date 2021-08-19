@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+[class^="col-"] {
+  padding: 10px 10px;
+}
+a {
+  color: #000000;
+}
+h4 {
+  font-size: map-get($map: $font-size, $key: md);
+}
+h5 {
+  font-size: map-get($map: $font-size, $key: xs);
+}
+.disable {
+  color: map-get($map: $color, $key: secondary) !important;
+  pointer-events: none;
+}

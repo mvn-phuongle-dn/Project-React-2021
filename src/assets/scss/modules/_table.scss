@@ -1,0 +1,64 @@
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid #616060;
+}
+
+thead {
+  background-color: #a8a5a5;
+}
+
+thead tr:last-child {
+  border: none;
+}
+
+th, td {
+  padding: 20px;
+  border: 1px solid #616060;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tb-product {
+  .th-price, .th-index {
+    width: 100px;
+  }
+  .td-product-img {
+    width: 80%;
+  }
+  .td-bold {
+    font-weight: 700;
+  }
+  .td-action >div, .td-quantity >div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn-buy {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+  .fa-plus-circle, .fa-minus-circle {
+    padding: 5px;
+    font-size: xx-large;
+    color: map-get($map: $btn-color, $key: primary);
+    &:hover {
+      cursor: pointer;
+      color: map-get($map: $btn-color, $key: hover);
+    }
+  }
+  .fa-trash-alt {
+    font-size: x-large;
+    color: #fc7777;
+    &:hover {
+      cursor: pointer;
+      color: #f83636;
+    }
+  }
+  .btn-buy {
+    border-radius: 10px;
+    padding: 10px;
+  }
+}

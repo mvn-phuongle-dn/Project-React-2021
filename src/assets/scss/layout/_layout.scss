@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.layout-2-col-left {
+  @extend %clr;
+  .col-left {
+    width: 25%;
+    float: left;
+  }
+  .col-main {
+    width: 75%;
+    float: right;
+  }
+}

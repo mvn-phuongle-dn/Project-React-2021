@@ -1,0 +1,16 @@
+%clr {
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}

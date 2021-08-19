@@ -1,0 +1,19 @@
+.pagination {
+  justify-content: center !important;
+  @include flex-style(flex, true, true, true);
+  padding: 10px 0;
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .page-item {
+    .page-link {
+      padding: 5px 10px;
+    }
+    .active {
+      background-color: #6ec3f5;
+      color: map-get($map: $color, $key: default);
+    }
+  }
+}

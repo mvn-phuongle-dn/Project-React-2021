@@ -1,0 +1,55 @@
+$blue-1: #00a9fd;
+$blue-2: #62c6f8;
+$blue-3: #81d1f9;
+$blue-4: #d9e4e9;
+$yellow-light: #f3e8db;
+$red-deep: #B20000;
+$green-1: #80ce11;
+$green-2: #bbea60;
+$white-1: #ffffff;
+$white-2: #afadad;
+$black-light: #292828;
+$font-UTM: "UTM Avo", Arial, Helvetica;
+$font-UTMbold: "UTMAvoBold", Arial, Helvetica;
+$font-Arial: Arial, Helvetica, sans-serif;
+$font-12: 12px;
+$font-14: 14px;
+$font-16: 16px;
+$font-18: 18px;
+$font-20: 20px;
+$font: (
+  primary: $font-UTM,
+  secondary: $font-UTMbold,
+  default: $font-Arial
+);
+$font-size: (
+  xs: $font-12,
+  sm: $font-14,
+  md: $font-16,
+  lg: $font-18,
+  xl: $font-20
+);
+$color: (
+  primary: $blue-1,
+  secondary: $white-2,
+  normal: $black-light,
+  accent: $green-2,
+  default: $white-1
+);
+$bg-color: (
+  primary: $green-2,
+  secondary: $green-1,
+  normal: $blue-4,
+  accent: $white-1,
+  hover: $blue-1
+);
+$bd-color: (
+  primary: $blue-1,
+  secondary: $blue-3,
+  default: $white-2
+);
+$btn-color: (
+  primary: $green-2,
+  secondary: $blue-3,
+  hover: $green-1
+)
