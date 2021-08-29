@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import product1 from '../../../assets/images/product1.jpg';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { increaseQuantity } from '../../../store/cartSlice';
@@ -9,22 +8,8 @@ import { deleteAll } from '../../../store/cartSlice';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.cart.value);
-  let productCart = [];
-  cart.map(e => {
-    JSON.parse(localStorage.getItem('products')).filter(pro => {
-      if(e.id === pro.id) { 
-        productCart.push(Object.assign({ amount: e.amount }, pro)) 
-      }
-    })
-  })
+  let productCart = useSelector(state => state.cart.value);
   const sum = productCart.reduce((sum, { price, amount }) => sum + price * amount, 0)
-  // let totalMoney = 0;
-  // let countQuantity = 0;
-  // for (var i = 0; i < productCart.length; i++) {
-  //   totalMoney += parseFloat(e.price)*parseInt(e.amount);
-  //   countQuantity += parseInt(products[i].quantity);
-  // }
   let handleIncrease = (e, id) => {
     e.preventDefault();
     dispatch(increaseQuantity(id));

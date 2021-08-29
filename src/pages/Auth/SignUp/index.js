@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { signup } from '../../../store/usersSlice';
 
 const SignUp = () => {
-  const [form, setForm] = useState({email: '', password: '', confirmPassword: '', name: '', address: '', phone: ''});
-  const auth = useAuth();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [form, setForm] = useState({email: '', password: '', confirmPassword: '', username: '', address: '', phone: ''});
   const handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -12,8 +14,12 @@ const SignUp = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(form.password === form.confirmPassword) {
-      auth.login(form.email, form.password);
+    if(form.email === '' || form.password === '' || form.confirmPassword === '' || form.username === '' || form.address === '' || form.phone === '' ) {
+      alert('Please enter all information!');
+    } else if(form.password === form.confirmPassword) {
+      dispatch(signup(form));
+      alert('Signup success!');
+      history.push('/auth/login');
     } else {
       alert('Username or password incorrect!');
     }
@@ -33,13 +39,13 @@ const SignUp = () => {
             <input name="confirmPassword" type="password" placeholder="Confirm Password" onChange={handleChange}></input>
           </div>
           <div className="form-control">
-            <input name="name" type="text" placeholder="Name" onChange={handleChange}></input>
+            <input name="username" type="text" placeholder="Username" onChange={handleChange}></input>
           </div>
           <div className="form-control">
             <input name="address" type="text" placeholder="Address" onChange={handleChange}></input>
           </div>
           <div className="form-control">
-            <input name="phone" type="number" placeholder="Phone" onChange={handleChange}></input>
+            <input name="phone" type="text" placeholder="Phone" onChange={handleChange}></input>
           </div>
           <button className="btn mt-24" type="submit">Sign Up</button>
           <div className="w-100 flex-space-between mt-24">

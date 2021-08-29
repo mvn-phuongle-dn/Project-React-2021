@@ -7,6 +7,12 @@
 a {
   color: #000000;
 }
+p, span {
+  font-size: map-get($map: $font-size, $key: lg);
+}
+h2 {
+  font-size: map-get($map: $font-size, $key: lg);
+}
 h4 {
   font-size: map-get($map: $font-size, $key: md);
 }

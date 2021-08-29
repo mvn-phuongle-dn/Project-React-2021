@@ -24,6 +24,10 @@
   font-weight: 700;
 }
 
+.mt-0 {
+  margin-top: 0;
+}
+
 .mt-5 {
   margin-top: 5px;
 }
@@ -32,24 +36,49 @@
   margin-top: 24px;
 }
 
-.mb-40 {
-  margin-bottom: 40px;
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
 }
 
 .mb-24 {
   margin-bottom: 24px;
 }
 
+.mb-40 {
+  margin-bottom: 40px;
+}
+
 .ml-10 {
   margin-left: 10px;
 }
 
+.ml-25 {
+  margin-left: 25px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
 .txt-primary {
-  color: map-get($map: $color, $key: primary);
+  color: map-get($map: $color, $key: secondary);
 }
 
 .txt-gray {
-  color: #a8a5a5;
+  color: map-get($map: $color, $key: primary);
+  color: #777474;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
 }
 
 .text-group {
@@ -65,7 +94,7 @@
 }
 
 .link-style {
-  color: #0f9cef;
+  color: map-get($map: $color, $key: primary);
 }
 
 .w-100 {
@@ -86,8 +115,4 @@ hr {
 
 .span-high-light {
   color: #0fef2d;
-}
-
-.txt-center {
-  text-align: center;
 }

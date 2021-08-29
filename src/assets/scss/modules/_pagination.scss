@@ -8,6 +8,9 @@
   }
 
   .page-item {
+    &:hover {
+      color: map-get($map: $btn-color, $key: secondary);
+    }
     .page-link {
       padding: 5px 10px;
     }

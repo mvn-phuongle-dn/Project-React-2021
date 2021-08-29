@@ -1,0 +1,32 @@
+.section-about-us {
+  .about-wrap {
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      h2 {
+        margin-bottom: 18px;
+      }
+    }
+    .about-icon {
+      display: block;
+      text-align: center;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 24px;
+      border: 1px solid map-get($map: $btn-color, $key: primary);
+      border-radius: 50%;
+      transition:all .5s ease;
+      i {
+        font-size: xx-large;
+        margin-top: 50%;
+        transform: translateY(-50%);
+      }
+      &:hover {
+        border: 2px solid map-get($map: $btn-color, $key: primary);
+        transform: scale(1.1,1.1) rotate(360deg) ;
+      }
+    }
+  }
+}

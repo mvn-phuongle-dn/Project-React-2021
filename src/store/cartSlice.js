@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   value: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
@@ -9,12 +9,14 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, value) => {
-      const idx = state.value.map(e => e.id).indexOf(value.payload);
-      if(idx !== -1) {
+      const idx = state.value.map(e => e.id).indexOf(value.payload.id);
+      if(idx !== -1 && parseInt(value.payload.quantity) > parseInt(state.value[idx].amount)) {
         state.value[idx].amount += 1;
+      } else if(idx !== -1 && parseInt(value.payload.quantity) === parseInt(state.value[idx].amount)) {
+        alert('Limited quantity of product!');
       } else {
-        state.value.push({id: value.payload, amount: 1});
-      }
+        state.value.push(Object.assign({ amount: 1 }, value.payload));
+      } 
       localStorage.setItem('cart', JSON.stringify(state.value));
     },
     increaseQuantity: (state, value) => {

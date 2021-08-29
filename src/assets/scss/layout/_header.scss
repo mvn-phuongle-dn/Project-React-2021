@@ -112,7 +112,7 @@
     box-shadow:  5px 5px 10px 0 rgba(0,0,0, 0.5);
     a {
       display: block;
-      width: 100px;
+      width: 120px;
       padding: 5px 10px;
       &:hover {
         background-color: map-get($map: $bg-color, $key: hover);

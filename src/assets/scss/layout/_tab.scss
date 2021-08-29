@@ -1,0 +1,24 @@
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  li {
+    font-weight: 600;
+    padding: 10px 20px;
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+    &.active {
+      border-bottom: 1px solid map-get($map: $bg-color, $key: hover);
+    }
+    &:hover {
+      cursor: pointer;
+      color: map-get($map: $bg-color, $key: hover);
+    }
+  }
+  margin-bottom: 24px;
+}
+.tabs-content {
+  padding: 20px;
+  border: 1px solid map-get($map: $color, $key: secondary);
+  border-radius: 20px;
+}
