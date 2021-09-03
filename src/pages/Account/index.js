@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const Account = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  const users = useSelector(state => state.users.value);
+  // const user = JSON.parse(localStorage.getItem('user'));
+  // const users = useSelector(state => state.users.value);
   // const account = users.find(x => x.email === user.email);
   const account = JSON.parse(localStorage.getItem('user'));
   const [tab, setTab] = useState(1);

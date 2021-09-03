@@ -21,7 +21,7 @@ const Home = () => {
   {id: 16, name: 'Korean fresh crispy persimmon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/qua-hong-2-178x140.jpg', fav: false, quantity: 3},
   {id: 22, name: 'June Plum', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: 'https://annam-gourmet.com/wp-content/uploads/2021/07/item_F159839.jpg', fav: false, quantity: 3}
   ]);
-  const [newProducts, setNewProducts] = useState([{id: 2, name: 'American seedless green grapes', origin: 'America', des: 'American seedless green grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
+  const newProducts = [{id: 2, name: 'American seedless green grapes', origin: 'America', des: 'American seedless green grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
   {id: 3, name: 'American seedless black grapes', origin: 'America', des: 'American seedless black grapes', price: '6', image: 'http://fruitshop.com.vn/image/cache/data/Grapel-178x140.jpg', fav: false, quantity: 3},
   {id: 4, name: 'merican seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/Grapes - red-178x140.JPG', fav: false, quantity: 3},
   {id: 5, name: 'American Ambrosia apple', origin: 'America', des: 'American Ambrosia apple size 48', price: '4.5', image: 'http://fruitshop.com.vn/image/cache/data/89683E82113A4626BA8569C232152225.ashx-178x140.jpg', fav: false, quantity: 3},
@@ -29,7 +29,7 @@ const Home = () => {
   {id: 7, name: 'American red cherry', origin: 'America', des: 'American red cherry', price: '10', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
   {id: 8, name: 'American green apple', origin: 'America', des: 'American seedless green grapes', price: '3', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
   {id: 9, name: 'Australian red cherry', origin: 'Australia', des: 'Australian red cherry', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3}
-  ])
+  ];
   // fetch(`https://my.api.mockaroo.com/user.json?key=df825860`)
   // .then(res=>res.json())
   // .then(res=>console.log(res))
@@ -69,19 +69,19 @@ const Home = () => {
         <div className="container">
           <ul className="d-flex category-list">
             <li className="col-3">
-              <img src={grape}/>
+              <img src={grape} alt="img-product"/>
               <p>America</p>
             </li>
             <li className="col-3">
-              <img src={cherry}/>
+              <img src={cherry} alt="img-product"/>
               <p>Australia</p>
             </li>
             <li className="col-3">
-              <img src={durian}/>
+              <img src={durian} alt="img-product"/>
               <p>Asia</p>
             </li>
             <li className="col-3">
-              <img src={fruit}/>
+              <img src={fruit} alt="img-product"/>
               <p>Fruit tea</p>
             </li>
           </ul>
@@ -100,7 +100,7 @@ const Home = () => {
                   <div className="product-wrap">
                     <button className={`btn ${e.fav? 'active': ''}`} onClick={(event)=>handleAddFav(event, e.id)}><i className="fas fa-heart"></i></button>
                     <Link to={`/product/${e.id}`} className="product-image">
-                      <img src={e.image}/>
+                      <img src={e.image} alt="img-product"/>
                     <div className="product-card">
                       <h4 className="product-name">{e.name}</h4>
                       <p className="product-origin">{e.origin}</p>
@@ -128,7 +128,7 @@ const Home = () => {
                 <li className="product-item col-3" key={e.id}>
                   <div className="product-wrap">
                     <Link to={`/product/${e.id}`} className="product-image">
-                      <img src={e.image}/>
+                      <img src={e.image} alt="img-product"/>
                     <div className="product-card">
                       <h4 className="product-name">{e.name}</h4>
                       <p className="product-origin">{e.origin}</p>

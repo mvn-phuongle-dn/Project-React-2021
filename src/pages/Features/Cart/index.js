@@ -33,7 +33,7 @@ const Cart = () => {
         <h3 className="section-title">Your Cart</h3>
         {productCart.length === 0 &&
         <p className="mt-24">Nothing in your cart <Link to="/products" className="link-style">Get some</Link></p>}
-        {productCart.length!=0 &&
+        {productCart.length !== 0 &&
         <div className="txt-center">
           <p className="mt-24"><span className="link-style">{productCart.length}</span> product in your cart</p>
           <table className="tb-product w-100 mt-24">
@@ -53,7 +53,7 @@ const Cart = () => {
                 <tr key={index}>
                   <td className="td-product-tt">{index + 1}</td>
                   <td className="col-2">
-                    <img className="td-product-img" src={e.image} />
+                    <img className="td-product-img" src={e.image} alt="img-product"/>
                   </td>
                   <td className="">{e.name}</td>
                   <td className="">{e.origin}</td>

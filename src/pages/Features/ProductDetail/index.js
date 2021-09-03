@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../../assets/images/product1.jpg';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../../store/cartSlice'
@@ -19,7 +18,7 @@ const ProductDetail = () => {
       <div className="container">
         <div className="product-detail-wrap">
           <div className="product-card">
-            <img className="product-image" src={product.image}/>
+            <img className="product-image" src={product.image} alt="img-product"/>
             <div className="txt-left">
               <h3 className="product-name txt-center">{product.name}</h3>
               <p className="title"><span>Origin:</span>{product.origin}</p>

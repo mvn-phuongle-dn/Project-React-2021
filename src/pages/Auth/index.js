@@ -1,4 +1,4 @@
-import React, {Suspense, lazy} from 'react';
+import React, {Suspense} from 'react';
 import { Switch, Route } from "react-router-dom";
 const Login = React.lazy(()=>import('./Login'));
 const SignUp = React.lazy(()=>import('./SignUp'));

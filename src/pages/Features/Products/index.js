@@ -64,7 +64,7 @@ const Products = () => {
               <li className="product-item col-3" key={e.id}>
                 <div className="product-wrap">
                   <Link to={`/product/${e.id}`} className="product-image">
-                    <img src={e.image}/>
+                    <img src={e.image} alt="img-product"/>
                   {/* </Link> */}
                   <div className="product-card">
                     <h4 className="product-name">{e.name}</h4>
