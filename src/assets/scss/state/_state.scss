@@ -64,6 +64,10 @@
   margin-right: 10px;
 }
 
+.mr-5 {
+  margin-right: 5px;
+}
+
 .txt-primary {
   color: map-get($map: $color, $key: secondary);
 }
@@ -114,5 +118,5 @@ hr {
 }
 
 .span-high-light {
-  color: #0fef2d;
+  color: #08b31f;
 }

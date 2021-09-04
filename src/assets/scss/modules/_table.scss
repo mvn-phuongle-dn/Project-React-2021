@@ -6,6 +6,8 @@ table {
 
 thead {
   background-color: #a8a5a5;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 thead tr:last-child {
@@ -14,7 +16,7 @@ thead tr:last-child {
 
 th, td {
   padding: 20px;
-  border: 1px solid #616060;
+  // border: 1px solid #616060;
 }
 
 tr:nth-child(even) {
@@ -40,25 +42,29 @@ tr:nth-child(even) {
       margin-left: 10px;
     }
   }
+  .td-action {
+    .fa-amazon-pay, .fa-times-circle {
+      font-size: xx-large;
+      &:hover {
+        cursor: pointer;
+        color: map-get($map: $btn-color, $key: hover);
+      }
+    }
+  }
   .fa-plus-circle, .fa-minus-circle {
     padding: 5px;
-    font-size: xx-large;
-    color: map-get($map: $btn-color, $key: primary);
+    font-size: x-large;
+    // color: map-get($map: $btn-color, $key: primary);
     &:hover {
       cursor: pointer;
       color: map-get($map: $btn-color, $key: hover);
-    }
-  }
-  .fa-trash-alt {
-    font-size: x-large;
-    color: #fc7777;
-    &:hover {
-      cursor: pointer;
-      color: #f83636;
     }
   }
   .btn-buy {
     border-radius: 10px;
     padding: 10px;
   }
+}
+.th-w100 {
+  width: 100px;
 }

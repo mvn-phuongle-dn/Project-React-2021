@@ -2,7 +2,7 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: map-get($map: $font-size, $key: xs);
-  color: map-get($map: $color, $key: default);
+  color: map-get($map: $color, $key: normal);
   border-radius: 5px;
   &-primary {
     background-color: map-get($map: $btn-color, $key: primary);

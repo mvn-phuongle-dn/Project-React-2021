@@ -9,7 +9,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, value) => {
-      console.log(value.payload);
       const idx = state.value.map(e => e.id).indexOf(value.payload.id);
       if(idx !== -1 && parseInt(value.payload.quantity) > parseInt(state.value[idx].amount)) {
         state.value[idx].amount += 1;
