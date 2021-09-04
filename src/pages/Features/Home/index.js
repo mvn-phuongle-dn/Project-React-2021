@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import HeroBanner from '../../../components/HeroBanner';
-import grape from '../../../assets/images/grape.png';
-import cherry from '../../../assets/images/cherry.jpg';
-import durian from '../../../assets/images/durian.png';
-import fruit from '../../../assets/images/fruit.png';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../store/cartSlice';
 import { addToFav } from '../../../store/favSlice';
@@ -12,23 +8,23 @@ import { Link, useHistory } from "react-router-dom";
 const Home = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: 'http://fruitshop.com.vn/image/cache/data/Sunkist Cara Cara Oranges-178x140.jpg', fav: false, quantity: 3},
-  {id: 4, name: 'merican seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/Grapes - red-178x140.JPG', fav: false, quantity: 3},
-  {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
-  {id: 10, name: 'Australian Sugar Plums', origin: 'Australia', des: 'American seedless green grapes', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/Man_duong_Uc-178x140.jpeg', fav: false, quantity: 3},
-  {id: 11, name: 'Australian Spring Peach', origin: 'Australian', des: 'American seedless green grapes', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/1243536c-178x140.jpg', fav: false, quantity: 3},
-  {id: 15, name: 'Korean yellow melon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/GF-1317052114-0953_m0-178x140.jpg', fav: false, quantity: 3},
-  {id: 16, name: 'Korean fresh crispy persimmon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/qua-hong-2-178x140.jpg', fav: false, quantity: 3},
-  {id: 22, name: 'June Plum', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: 'https://annam-gourmet.com/wp-content/uploads/2021/07/item_F159839.jpg', fav: false, quantity: 3}
+  const [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: require('../../../assets/images/orange-usa.png').default, fav: false, quantity: 3},
+  {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
+  {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: require('../../../assets/images/blue-br.png').default, fav: false, quantity: 3},
+  {id: 10, name: 'Australian Sugar Plums', origin: 'Australia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/sugar-plums.jpg').default, fav: false, quantity: 3},
+  {id: 11, name: 'Australian Spring Peach', origin: 'Australian', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/peach.jpg').default, fav: false, quantity: 3},
+  {id: 15, name: 'Korean yellow melon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/melon.jpg').default, fav: false, quantity: 3},
+  {id: 16, name: 'Korean fresh crispy persimmon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/persimmon.jpg').default, fav: false, quantity: 3},
+  {id: 22, name: 'June Plum', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/plum.png').default, fav: false, quantity: 3}
   ]);
-  const newProducts = [{id: 2, name: 'American seedless green grapes', origin: 'America', des: 'American seedless green grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
-  {id: 3, name: 'American seedless black grapes', origin: 'America', des: 'American seedless black grapes', price: '6', image: 'http://fruitshop.com.vn/image/cache/data/Grapel-178x140.jpg', fav: false, quantity: 3},
-  {id: 4, name: 'merican seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: 'http://fruitshop.com.vn/image/cache/data/Grapes - red-178x140.JPG', fav: false, quantity: 3},
-  {id: 5, name: 'American Ambrosia apple', origin: 'America', des: 'American Ambrosia apple size 48', price: '4.5', image: 'http://fruitshop.com.vn/image/cache/data/89683E82113A4626BA8569C232152225.ashx-178x140.jpg', fav: false, quantity: 3},
-  {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
-  {id: 7, name: 'American red cherry', origin: 'America', des: 'American red cherry', price: '10', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
-  {id: 8, name: 'American green apple', origin: 'America', des: 'American seedless green grapes', price: '3', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3},
-  {id: 9, name: 'Australian red cherry', origin: 'Australia', des: 'Australian red cherry', price: '1', image: 'http://fruitshop.com.vn/image/cache/data/nho-xanh-178x140.jpg', fav: false, quantity: 3}
+  const newProducts = [{id: 2, name: 'American seedless green grapes', origin: 'America', des: 'American seedless green grapes', price: '5', image: require('../../../assets/images/nho-xanh.jpg').default, fav: false, quantity: 3},
+  {id: 3, name: 'American seedless black grapes', origin: 'America', des: 'American seedless black grapes', price: '6', image: require('../../../assets/images/black-grapes.jpg').default, fav: false, quantity: 3},
+  {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
+  {id: 5, name: 'American Ambrosia apple', origin: 'America', des: 'American Ambrosia apple size 48', price: '4.5', image:  require('../../../assets/images/apple-do.png').default, fav: false, quantity: 3},
+  {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: require('../../../assets/images/blue-br.png').default, fav: false, quantity: 3},
+  {id: 7, name: 'American red cherry', origin: 'America', des: 'American red cherry', price: '10', image: require('../../../assets/images/red-cherry.jpg').default, fav: false, quantity: 3},
+  {id: 8, name: 'American green apple', origin: 'America', des: 'American seedless green grapes', price: '3', image: require('../../../assets/images/green-apples.jpeg').default, fav: false, quantity: 3},
+  {id: 9, name: 'Australian red cherry', origin: 'Australia', des: 'Australian red cherry', price: '1', image: require('../../../assets/images/red-cherry.jpeg').default, fav: false, quantity: 3}
   ];
   // fetch(`https://my.api.mockaroo.com/user.json?key=df825860`)
   // .then(res=>res.json())
@@ -69,19 +65,19 @@ const Home = () => {
         <div className="container">
           <ul className="d-flex category-list">
             <li className="col-3">
-              <img src={grape} alt="img-product"/>
+              <img src={require('../../../assets/images/grape.png').default} alt="img-product"/>
               <p>America</p>
             </li>
             <li className="col-3">
-              <img src={cherry} alt="img-product"/>
+              <img src={require('../../../assets/images/cherry.jpg').default} alt="img-product"/>
               <p>Australia</p>
             </li>
             <li className="col-3">
-              <img src={durian} alt="img-product"/>
+              <img src={require('../../../assets/images/durian.png').default} alt="img-product"/>
               <p>Asia</p>
             </li>
             <li className="col-3">
-              <img src={fruit} alt="img-product"/>
+              <img src={require('../../../assets/images/fruit.png').default} alt="img-product"/>
               <p>Fruit tea</p>
             </li>
           </ul>

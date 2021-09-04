@@ -38,7 +38,7 @@ const Header = () => {
             <div className="header-right">
               <ul className="menu">
                 <li className="menu-item">
-                  <a className="page-link" href="/"><i className="fas fa-user"></i></a>
+                  <i className="fas fa-user page-link"></i>
                   <ul>
                     <li>
                       {!statusLogin ? <Link to="/auth/login" className="page-link">Login <i className="fas fa-sign-in-alt"></i></Link> :
