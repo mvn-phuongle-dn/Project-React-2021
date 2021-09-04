@@ -14,7 +14,7 @@ const Products = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     setProducts(allProduct.slice((page-1)*12, page*12));
-  }, [page]);
+  }, [page, allProduct]);
  
   function handleChangePage(number) {
     if(number >= pages[0] && number <= pages[pages.length-1]) {
