@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HeroBanner from '../../../components/HeroBanner';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../store/cartSlice';
@@ -8,16 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 const Home = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const fav = useSelector(state => state.fav.value);
-  let [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: require('../../../assets/images/orange-usa.png').default, fav: false, quantity: 3},
-  {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
-  {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: require('../../../assets/images/blue-br.png').default, fav: false, quantity: 3},
-  {id: 10, name: 'Australian Sugar Plums', origin: 'Australia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/sugar-plums.jpg').default, fav: false, quantity: 3},
-  {id: 11, name: 'Australian Spring Peach', origin: 'Australian', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/peach.jpg').default, fav: false, quantity: 3},
-  {id: 15, name: 'Korean yellow melon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/melon.jpg').default, fav: false, quantity: 3},
-  {id: 16, name: 'Korean fresh crispy persimmon', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/persimmon.jpg').default, fav: false, quantity: 3},
-  {id: 22, name: 'June Plum', origin: 'Asia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/plum.png').default, fav: false, quantity: 3}
-  ]);
+  const products = useSelector(state => state.fav.value);
   const newProducts = [{id: 2, name: 'American seedless green grapes', origin: 'America', des: 'American seedless green grapes', price: '5', image: require('../../../assets/images/nho-xanh.jpg').default, fav: false, quantity: 3},
   {id: 3, name: 'American seedless black grapes', origin: 'America', des: 'American seedless black grapes', price: '6', image: require('../../../assets/images/black-grapes.jpg').default, fav: false, quantity: 3},
   {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
@@ -39,12 +30,6 @@ const Home = () => {
   //     }
   //   )
   // }, []);
-  products.map(e => {
-    if(fav.includes(e.id)){
-      e.fav = !e.fav;
-    }
-    return e;
-  })
   const handleAddProduct = (e, pr) => {
     e.preventDefault();
     const user = localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')) : '';
@@ -56,13 +41,13 @@ const Home = () => {
   }
   const handleAddFav = (e, id) => {
     e.preventDefault();
-    const newList = products.map(e => {
-      if(e.id === id) {
-        e.fav = !e.fav;
-      }
-      return e;
-    })
-    setProducts(newList);
+    // const newList = products.map(e => {
+    //   if(e.id === id) {
+    //     e.fav = !e.fav;
+    //   }
+    //   return e;
+    // })
+    // setProducts(newList);
     dispatch(addToFav(id));
   }
   return(

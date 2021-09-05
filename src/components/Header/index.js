@@ -11,7 +11,8 @@ const Header = () => {
   }
   const statusLogin = useSelector(state => state.login.value);
   const countCart = useSelector(state => state.cart.value.length);
-  const countFav = useSelector(state => state.fav.value.length);
+  const countFav = useSelector(state => state.fav.value.filter(e => e.fav).length);
+
   return(
     <>
       <header className="page-header">
@@ -49,7 +50,7 @@ const Header = () => {
                 </li>
                 <li className="menu-item cart-number-wrap">
                   <Link to="/cart" className="page-link" href="#">My cart <i className="fas fa-shopping-cart"></i></Link>
-                  {!!countCart && <span className="cart-number">{countCart}</span>}
+                  {statusLogin &&!!countCart && <span className="cart-number">{countCart}</span>}
                 </li>
                 <li className="menu-item cart-number-wrap">
                   <Link to="/" className="page-link" href="#"><i className="fas fa-heart"></i></Link>
