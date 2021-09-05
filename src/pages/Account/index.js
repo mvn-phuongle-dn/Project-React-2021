@@ -57,7 +57,7 @@ const Account = () => {
             }
             {(tab===2) && 
               <div>
-                <h3>You have {history.length} orders!</h3>
+                <h3>You have <span class="link-style f-bold">{history.length}</span> orders!</h3>
                 {history.length !== 0 &&
                 <table className="tb-product w-100 mt-32">
                   <thead className="thead">

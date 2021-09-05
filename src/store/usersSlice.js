@@ -10,7 +10,6 @@ export const usersSlice = createSlice({
   initialState,
   reducers: {
     signup: (state, value) => {
-      console.log('value.payload', value.payload);
       state.value.push(Object.assign({ id: state.value[state.value.length-1].id+1}, value.payload));
     }
   },

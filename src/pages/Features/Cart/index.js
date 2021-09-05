@@ -31,7 +31,7 @@ const Cart = () => {
     alert('Thank you!');
   }
   return(
-    <section className="section">
+    <section className="section-cart">
       <div className="container">
         <div className="section-wrap txt-center">
           {productCart.length === 0 &&
