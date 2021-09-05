@@ -65,13 +65,12 @@ const Products = () => {
                 <div className="product-wrap">
                   <Link to={`/product/${e.id}`} className="product-image">
                     <img src={e.image} alt="img-product"/>
-                  {/* </Link> */}
-                  <div className="product-card">
-                    <h4 className="product-name">{e.name}</h4>
-                    <p className="product-origin">{e.origin}</p>
-                    <p className="product-price">{e.price}$</p>
-                    <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add">Add to cart <i className="fas fa-cart-plus"></i></button>
-                  </div>
+                    <div className="product-card">
+                      <h4 className="product-name">{e.name}</h4>
+                      <p className="product-origin">{e.origin}</p>
+                      <p className="product-price">{e.price}$</p>
+                      <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add">Add to cart <i className="fas fa-cart-plus"></i></button>
+                    </div>
                   </Link>
                 </div>
               </li>

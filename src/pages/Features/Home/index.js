@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import HeroBanner from '../../../components/HeroBanner';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../store/cartSlice';
@@ -9,7 +9,7 @@ const Home = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const fav = useSelector(state => state.fav.value);
-  const [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: require('../../../assets/images/orange-usa.png').default, fav: false, quantity: 3},
+  let [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: require('../../../assets/images/orange-usa.png').default, fav: false, quantity: 3},
   {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
   {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: require('../../../assets/images/blue-br.png').default, fav: false, quantity: 3},
   {id: 10, name: 'Australian Sugar Plums', origin: 'Australia', des: 'American seedless green grapes', price: '1', image: require('../../../assets/images/sugar-plums.jpg').default, fav: false, quantity: 3},
@@ -39,17 +39,15 @@ const Home = () => {
   //     }
   //   )
   // }, []);
-  useEffect(() => {
-    const newList = products.map(e => {
-      fav.map(id=> {
-        if(e.id === id) {
-          e.fav = !e.fav;
-        }
-      })
+  products.map(e => {
+    fav.map(id=> {
+      if(e.id === id) {
+        e.fav = !e.fav;
+      }
       return e;
     })
-    setProducts(newList);
-  }, []);
+    return e;
+  })
   const handleAddProduct = (e, pr) => {
     e.preventDefault();
     const user = localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')) : '';
