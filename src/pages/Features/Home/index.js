@@ -40,12 +40,9 @@ const Home = () => {
   //   )
   // }, []);
   products.map(e => {
-    fav.map(id=> {
-      if(e.id === id) {
-        e.fav = !e.fav;
-      }
-      return e;
-    })
+    if(fav.includes(e.id)){
+      e.fav = !e.fav;
+    }
     return e;
   })
   const handleAddProduct = (e, pr) => {
