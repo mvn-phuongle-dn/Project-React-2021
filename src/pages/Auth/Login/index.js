@@ -25,8 +25,8 @@ const Login = () => {
             <input name="password" type="password" placeholder="Password" onChange={handleChange}></input>
           </div>
           <button className="btn mt-24" type="submit">Login</button>
-          <p className="mt-24">Don't have an account? <Link to="/auth/signup" className="link-style"> Sign Up</Link></p>
-          <Link to="" className="link-style mt-24">Forgot Password</Link>
+          <p className="mt-24">Don't have an account? <Link to="/auth/signup" className="link-style f-bold"> Sign Up</Link></p>
+          <Link to="#" className="link-style mt-24 f-bold">Forgot Password</Link>
         </form>
       </div>
     </div>

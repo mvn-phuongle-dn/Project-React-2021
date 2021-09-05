@@ -49,8 +49,8 @@ const SignUp = () => {
           </div>
           <button className="btn mt-24" type="submit">Sign Up</button>
           <div className="w-100 flex-space-between mt-24">
-            <Link to="/auth/login" className="link-style"> Login</Link>
-            <Link to="/" className="link-style">Help</Link>
+            <Link to="/auth/login" className="link-style f-bold"> Login</Link>
+            <Link to="#" className="link-style f-bold">Help</Link>
           </div>
         </form>
       </div>

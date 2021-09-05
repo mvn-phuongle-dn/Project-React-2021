@@ -66,43 +66,6 @@ const Account = () => {
         </div>
       </div>
     </div>
-    // <div className="container">
-    //   <div className="section-account">
-    //       <h2 className="mb-24 fs-18">About you</h2>
-    //       <div className="text-group">
-    //         <label className="title">
-    //           Name:
-    //         </label>
-    //         <span className="value">
-    //           {account.username}
-    //         </span>
-    //       </div>
-    //       <div className="text-group">
-    //         <label className="title">
-    //           Email:
-    //         </label>
-    //         <span className="value">
-    //           {account.email}
-    //         </span>
-    //       </div>
-    //       <div className="text-group">
-    //         <label className="title">
-    //           Address:
-    //         </label>
-    //         <span className="value">
-    //           {account.address}
-    //         </span>
-    //       </div>
-    //       <div className="text-group">
-    //         <label className="title">
-    //           Phone number:
-    //         </label>
-    //         <span className="value">
-    //           {account.phone}
-    //         </span>
-    //       </div>
-    //   </div>
-    // </div>
   );
 }
 export default Account;

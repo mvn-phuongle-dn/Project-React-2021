@@ -31,6 +31,8 @@ form {
     .btn {
       width: 100%;
       background-color: #0f9cef;
+      font-size: 16px;
+      color: map-get($map: $color, $key: default);
     }
   }
   .form-control {

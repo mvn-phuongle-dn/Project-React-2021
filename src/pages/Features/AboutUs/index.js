@@ -27,8 +27,8 @@ const AboutUs = () => {
               <p className="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
             </li>
           </ul>
-          <div className="mt-24">
-            <h2 className="mb-24">Contact</h2>
+          <div className="mt-40">
+            <h2 className="mb-24">CONTACT</h2>
             <ul className="flex-space-between">
               <li>
                 <p className="mb-8">

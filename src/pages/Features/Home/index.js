@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroBanner from '../../../components/HeroBanner';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../../store/cartSlice';
 import { addToFav } from '../../../store/favSlice';
 import { Link, useHistory } from "react-router-dom";
@@ -8,6 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 const Home = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const fav = useSelector(state => state.fav.value);
   const [products, setProducts] = useState([{id: 1, name: 'American Navel yellow flesh orange', origin: 'America', des: 'American Navel yellow flesh orange', price: '0.5', image: require('../../../assets/images/orange-usa.png').default, fav: false, quantity: 3},
   {id: 4, name: 'American seedless red grapes', origin: 'America', des: 'American seedless red grapes', price: '5', image: require('../../../assets/images/nho-do.jpeg').default, fav: false, quantity: 3},
   {id: 6, name: 'Blueberry USA', origin: 'America', des: 'Blueberry USA - Blueberry USA', price: '20', image: require('../../../assets/images/blue-br.png').default, fav: false, quantity: 3},
@@ -38,6 +39,17 @@ const Home = () => {
   //     }
   //   )
   // }, []);
+  useEffect(() => {
+    const newList = products.map(e => {
+      fav.map(id=> {
+        if(e.id === id) {
+          e.fav = !e.fav;
+        }
+      })
+      return e;
+    })
+    setProducts(newList);
+  }, []);
   const handleAddProduct = (e, pr) => {
     e.preventDefault();
     const user = localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')) : '';
@@ -94,15 +106,15 @@ const Home = () => {
               products.map(e => (
                 <li className="product-item col-3" key={e.id}>
                   <div className="product-wrap">
-                    <button className={`btn ${e.fav? 'active': ''}`} onClick={(event)=>handleAddFav(event, e.id)}><i className="fas fa-heart"></i></button>
                     <Link to={`/product/${e.id}`} className="product-image">
-                      <img src={e.image} alt="img-product"/>
-                    <div className="product-card">
-                      <h4 className="product-name">{e.name}</h4>
-                      <p className="product-origin">{e.origin}</p>
-                      <p className="product-price">{e.price}$</p>
-                      <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add mt-24">Add to cart <i className="fas fa-cart-plus"></i></button>
-                    </div>
+                      <i className={`fas fa-heart ${e.fav? 'active': ''}`} onClick={(event)=>handleAddFav(event, e.id)}></i>
+                      <img src={e.image} alt="img-product" className="product-image"/>
+                      <div className="product-card">
+                        <h4 className="product-name">{e.name}</h4>
+                        <p className="product-origin">{e.origin}</p>
+                        <p className="product-price">{e.price}$</p>
+                        <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add">Add to cart <i className="fas fa-cart-plus"></i></button>
+                      </div>
                     </Link>
                   </div>
                 </li>
@@ -118,7 +130,7 @@ const Home = () => {
             <h2 className="fs-24">Sales</h2>
             <Link to="/products" className="link-style more">See more<i className="far fa-long-arrow-right"></i></Link>
           </div>
-          <ul className="product-list">
+          <ul className="product-list mb-40">
             {
               newProducts.map(e => (
                 <li className="product-item col-3" key={e.id}>
@@ -129,7 +141,7 @@ const Home = () => {
                       <h4 className="product-name">{e.name}</h4>
                       <p className="product-origin">{e.origin}</p>
                       <p className="product-price">${e.price}<span className="product-price-discount">$10</span></p>
-                      <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add mt-24">Add to cart <i className="fas fa-cart-plus"></i></button>
+                      <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add">Add to cart <i className="fas fa-cart-plus"></i></button>
                     </div>
                     </Link>
                   </div>

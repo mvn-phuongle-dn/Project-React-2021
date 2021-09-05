@@ -80,7 +80,8 @@ const Cart = () => {
               </tbody>
             </table>
             <div className="mt-24">
-              <span className="f-bold mr-10">Total: <span className="span-high-light ml-10">${total}</span></span>
+              <p className="mb-24">Total: <span className="span-high-light f-bold ml-10">${total}</span></p>
+              <span className="f-bold mr-10">Payment on delivery</span>
               <button className="btn btn-primary fs-16 ml-10" onClick={(event) => handleBuyAll(event)}>
                 Buy All
               </button>

@@ -1,5 +1,7 @@
 .product {
   &-list {
+    padding-left: 20px;
+    padding-right: 20px;
     @include flex-style(flex, true, true, true);
     flex-wrap: wrap;
   }
@@ -17,16 +19,17 @@
     &:hover {
       box-shadow: 0px 0px 5px 2px #888888;
     }
-    .btn {
-      .fa-heart {
-        margin-top: 10px;
-        font-size: x-large;
-        color: #e8e5e5;
+    .fa-heart {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      font-size: x-large;
+      color: #e8e5e5;
+      &:hover {
+        cursor: pointer;
       }
       &.active {
-        .fa-heart {
-          color: #f13636;
-        }
+        color: #f13636ea;
       }
     }
   }
@@ -39,8 +42,7 @@
   }
   &-card {
     text-align: center;
-    padding: 5px;
-    height: 200px;
+    padding: 20px;
     .wrap {
       height: 100%;
       display: flex;
@@ -54,7 +56,7 @@
       }
       color: #000;
       background-color: map-get($map: $bg-color, $key: accent);
-      margin-top: 20px;
+      margin-top: 10px;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
       cursor: pointer;
@@ -72,10 +74,12 @@
     }
   }
   &-name {
-    height: 40px;
     font-size: 18px;
     margin: 10px 0;
     text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &-desc {
     color: map-get($map: $color, $key: normal);

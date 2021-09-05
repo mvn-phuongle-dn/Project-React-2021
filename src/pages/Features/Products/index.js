@@ -70,7 +70,7 @@ const Products = () => {
                     <h4 className="product-name">{e.name}</h4>
                     <p className="product-origin">{e.origin}</p>
                     <p className="product-price">{e.price}$</p>
-                    <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add mt-24">Add to cart <i className="fas fa-cart-plus"></i></button>
+                    <button onClick={(event)=>handleAddProduct(event, e)} className="btn btn-primary btn-add">Add to cart <i className="fas fa-cart-plus"></i></button>
                   </div>
                   </Link>
                 </div>

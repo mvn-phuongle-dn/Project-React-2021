@@ -52,7 +52,7 @@ const Header = () => {
                   {!!countCart && <span className="cart-number">{countCart}</span>}
                 </li>
                 <li className="menu-item cart-number-wrap">
-                  <Link to="/" className="page-link" href="#">My favourite <i className="fas fa-heart"></i></Link>
+                  <Link to="/" className="page-link" href="#"><i className="fas fa-heart"></i></Link>
                   {!!countFav && <span className="cart-number">{countFav}</span>}
                 </li>
               </ul>
