@@ -5,6 +5,7 @@ import { increaseQuantity } from '../../../store/cartSlice';
 import { decreaseQuantity } from '../../../store/cartSlice';
 import { deleteProduct } from '../../../store/cartSlice';
 import { deleteAll } from '../../../store/cartSlice';
+import { addToHistory } from '../../../store/historySlice';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -25,19 +26,20 @@ const Cart = () => {
   }
   let handleBuyAll = (e) => {
     e.preventDefault();
+    dispatch(addToHistory({productCart, total}));
     dispatch(deleteAll());
+    alert('Thank you!');
   }
   return(
     <section className="section">
       <div className="container">
         <div className="section-wrap txt-center">
-          <h3 className="section-title">Your Cart</h3>
           {productCart.length === 0 &&
-          <p className="mt-24">Nothing in your cart <Link to="/products" className="link-style">Get some</Link></p>}
+          <p className="mt-24">Nothing in your cart! <Link to="/products" className="link-style">Get some</Link></p>}
           {productCart.length !== 0 &&
           <div className="txt-center">
-            <p className="mt-24"><span className="link-style f-bold mr-5">{sum}</span> product in your cart</p>
-            <table className="tb-product w-100 mt-24">
+            <p className="fs-24"><span className="link-style f-bold mr-5 fs-24">{sum}</span> products in your cart!</p>
+            <table className="tb-product w-100 mt-32">
               <thead className="thead">
                 <tr>
                   <th className="th-index"></th>
@@ -46,7 +48,6 @@ const Cart = () => {
                   <th>Origin</th>
                   <th className="th-quantity">Quantity</th>
                   <th className="th-price">Price</th>
-                  <th className="th-w100"></th>
                   <th className="th-w100"></th>
                 </tr>
               </thead>
@@ -68,11 +69,6 @@ const Cart = () => {
                     </td>
                     <td className="td-bold span-high-light">${parseFloat(e.price)*parseInt(e.amount)}</td>
                     <td className="td-action">
-                      <div>
-                        <i className="fab fa-amazon-pay" onClick={(event) => handleDelete(event, e.id)}></i>
-                      </div>
-                    </td>
-                    <td className="td-action">
                       <i className="fal fa-times-circle" onClick={(event) => handleDelete(event, e.id)}></i>
                     </td>
                   </tr>
@@ -83,7 +79,7 @@ const Cart = () => {
               <p className="mb-24">Total: <span className="span-high-light f-bold ml-10">${total}</span></p>
               <span className="f-bold mr-10">Payment on delivery</span>
               <button className="btn btn-primary fs-16 ml-10" onClick={(event) => handleBuyAll(event)}>
-                Buy All
+                Buy
               </button>
             </div>
           </div>

@@ -5,6 +5,7 @@ import favReducer from './favSlice';
 import userReducer from './loginStatusSlice';
 import usersReducer from './usersSlice';
 import productsReducer from './productsSlice';
+import historyReducer from './historySlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     fav: favReducer,
     user: userReducer,
     users: usersReducer,
-    products: productsReducer
+    products: productsReducer,
+    history: historyReducer
   },
 })

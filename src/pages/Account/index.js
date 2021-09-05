@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Account = () => {
-  // const user = JSON.parse(localStorage.getItem('user'));
-  // const users = useSelector(state => state.users.value);
-  // const account = users.find(x => x.email === user.email);
   const account = JSON.parse(localStorage.getItem('user'));
+  const history = useSelector(state => state.history.value);
   const [tab, setTab] = useState(1);
   const handleChangeTab = (e, value) => {
     e.preventDefault();
@@ -59,7 +57,29 @@ const Account = () => {
             }
             {(tab===2) && 
               <div>
-                <p>Phasellus pharetra aliquet viverra. Donec scelerisque tincidunt diam, eu fringilla urna auctor at.</p>
+                <h3>You have {history.length} orders!</h3>
+                {history.length !== 0 &&
+                <table className="tb-product w-100 mt-32">
+                  <thead className="thead">
+                    <tr>
+                      <th className="th-index">Code order</th>
+                      <th className="col-2">Status</th>
+                      <th className="col-3">Total</th>
+                      <th className="col-3">Date order</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {history.map((e, index) => (
+                      <tr key={index}>
+                        <td>{index}</td>
+                        <td>Delivery</td>
+                        <td className="f-bold">{e.detail.total}$</td>
+                        <td>{e.date}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                }
               </div>
             }
           </div>
